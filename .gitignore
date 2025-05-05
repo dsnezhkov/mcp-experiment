@@ -10,3 +10,4 @@ wheels/
 .venv
 .env
 *.parquet
+llms_full.txt
