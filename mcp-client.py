@@ -2,12 +2,13 @@ import asyncio
 from mcp.client.sse import sse_client
 from mcp.client.session import ClientSession
 
+
 async def get_available():
     async with sse_client("http://localhost:8000/sse") as streams:
         async with ClientSession(streams[0], streams[1]) as session:
             await session.initialize()
 
-             # List available prompts
+            # List available prompts
             prompts = await session.list_prompts()
             print(f"Prompts: {prompts}")
 
@@ -30,8 +31,9 @@ async def get_available():
             print(f"Content: {content}")
 
             # Call a tool
-            result = await session.call_tool("langgraph-query-tool", arguments={"query": "What is langgraph"})
+            result = await session.call_tool("langgraph_query_tool", arguments={"query": "What is langgraph"})
             print(f"tool call result: {result}")
+
 
 async def main():
     await get_available()
