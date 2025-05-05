@@ -9,8 +9,8 @@ from pathlib import Path
 PATH = "./stores/"
 
 # Create an MCP server
-settings = {'host': '127.0.0.1', 'port': 8080}
-mcp = FastMCP("LangGraph-Docs-MCP-Server", settings=settings)
+# 0.0.0.0:8000
+mcp = FastMCP("LangGraph-Docs-MCP-Server")
 
 # Add a tool to query the LangGraph documentation
 
